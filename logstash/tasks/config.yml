@@ -22,7 +22,7 @@
     - 10-syslog.conf
     - 11-nginx.conf
     - 12-apache.conf
-    - 14-solr.conf
+      #    - 14-solr.conf
     - 15-drupal.conf
   notify: restart logstash
 
@@ -34,6 +34,14 @@
     group: root
     mode: 0644
   when: logstash_monitor_local_syslog
+  notify: restart logstash
+
+- name: Append X-Pack monitoring configuration
+  blockinfile:
+    path: /etc/logstash/logstash.yml
+    block: |
+     xpack.monitoring.enabled: true
+     xpack.monitoring.elasticsearch.hosts: ["http://10.0.0.10:9200"]
   notify: restart logstash
 
 - name: Ensure configuration for local syslog is absent if disabled.
