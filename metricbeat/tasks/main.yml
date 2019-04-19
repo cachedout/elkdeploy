@@ -1,0 +1,26 @@
+---
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Install Metricbeat.
+  package:
+    name: "{{ metricbeat_package }}"
+    state: "{{ metricbeat_package_state }}"
+
+- name: Ensure Metricbeat is started and enabled at boot.
+  service:
+    name: metricbeat
+    state: "{{ metricbeat_service_state }}"
+    enabled: "{{ metricbeat_service_enabled }}"
+
+    #- name: Copy Beats configuration.
+    #  template:
+    #    src: "{{ beats_config_template }}"
+    #    dest: "{{ beats_config_file_path }}"
+    #    owner: root
+    #    group: root
+    #    mode: 0644
+    #  notify: restart beats

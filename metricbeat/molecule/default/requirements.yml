@@ -1,0 +1,3 @@
+---
+- src: jobscore.beats
+  version: v0.1.1

@@ -42,4 +42,12 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  config.vm.define "bs1.prod" do |bs1_prod|
+    bs1_prod.vm.network :private_network, ip: "10.0.0.13"
+    bs1_prod.vm.provision "ansible_local" do |ansible|
+      ansible.become = true
+      ansible.playbook = "deploy.yml"
+    end
+  end
+
 end

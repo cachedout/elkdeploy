@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  role_name: beats
+  author: Sami Yessou
+  description: Playbook for beats.
+  company: Enter srl
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+  galaxy_tags:
+    - molecule
+dependencies:
+  - {role: jobscore.beats, version: v0.1.1}
+  # List your role dependencies here, one per line.

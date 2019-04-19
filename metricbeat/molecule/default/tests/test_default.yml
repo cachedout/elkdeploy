@@ -1,0 +1,4 @@
+---
+package:
+  metricbeat:
+    installed: true
