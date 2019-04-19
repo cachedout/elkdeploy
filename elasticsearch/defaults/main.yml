@@ -1,0 +1,9 @@
+---
+elasticsearch_version: '7.x'
+elasticsearch_package_state: present
+
+elasticsearch_service_state: started
+elasticsearch_service_enabled: true
+
+elasticsearch_network_host: 10.0.0.10
+elasticsearch_http_port: 9200

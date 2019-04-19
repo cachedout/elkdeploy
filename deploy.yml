@@ -1,0 +1,29 @@
+- hosts: es*, ls*
+  tasks:
+    - name: installing repo for Java 8 in Ubuntu
+      apt_repository: repo='ppa:openjdk-r/ppa'
+
+- hosts: es*
+  roles:
+    - role: java
+      java_packages:
+        - openjdk-8-jdk
+      java_home: "/usr/lib/jvm/java-8-openjdk-amd64/"
+    - role: elasticsearch
+      environment:
+        JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64/"
+
+- hosts: kb*
+  roles:
+    - role: kibana
+
+- hosts: ls*
+  roles:
+    - role: java
+      java_packages:
+        - openjdk-8-jdk
+      java_home: "/usr/lib/jvm/java-8-openjdk-amd64/"
+    - role: logstash
+      environment:
+        JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64/"
+
