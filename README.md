@@ -48,7 +48,6 @@ Presently, the following Stack components are available:
 * Elasticsearch
 * Kibana
 * Logstash
-* Beats
 
 ### Contributions
 
