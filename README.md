@@ -6,6 +6,8 @@ ESdeploy is a collection of modified Ansible recipies when used along with Vagra
 
 This means that you can easily use ESdeploy to create an environment for testing or for demonstration and even recreate that environment the same way as many times as you like!
 
+This nice thing is that each part of the Elastic Stack is deployed into its own virtual machine, so you can muck about with one while leaving the rest of the stack pristine.
+
 ### Installation
 
 To use ESdeploy, just clone the repo onto your workstation. ESdeploy has the following prerequsites:
