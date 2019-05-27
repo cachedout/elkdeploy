@@ -1,5 +1,5 @@
 # {{ ansible_managed }}
-cluster.initial_master_nodes: 10.0.0.10
+cluster.initial_master_nodes: {{ elasticsearch_network_host }}
 # ======================== Elasticsearch Configuration =========================
 #
 # NOTE: Elasticsearch comes with reasonable defaults for most settings.

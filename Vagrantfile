@@ -50,4 +50,27 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  config.vm.define "es1.mon" do |es1_mon|
+    es1_mon.vm.network :private_network, ip: "10.0.0.20"
+    es1_mon.vm.network :forwarded_port, guest: 10200, host: 10200
+    es1_mon.vm.network :forwarded_port, guest: 10300, host: 10300
+    es1_mon.vm.network :forwarded_port, guest: 22, host: 2234
+    es1_mon.vm.provision "ansible_local" do |ansible|
+      ansible.extra_vars = {elasticsearch_http_port: "10200", elasticsearch_network_host: "10.0.0.20"}
+      ansible.become = true
+      ansible.playbook = "deploy.yml"
+    end
+  end
+
+  config.vm.define "kb1.mon" do |kb1_mon|
+    kb1_mon.vm.network :private_network, ip: "10.0.0.11"
+    kb1_mon.vm.network :forwarded_port, guest: 5601, host: 6601
+    kb1_mon.vm.network :forwarded_port, guest: 22, host: 2235
+    kb1_mon.vm.provision "ansible_local" do |ansible|
+      ansible.extra_vars = {kibana_elasticsearch_url: "http://10.0.0.20:10200"}
+      ansible.become = true
+      ansible.playbook = "deploy.yml"
+    end
+  end
+
 end
