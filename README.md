@@ -49,6 +49,10 @@ Presently, the following Stack components are available:
 * Kibana
 * Logstash
 
+### Thanks
+
+Thanks go to Jeff Geerlinger who was the original author of a number of the Ansible configurations, which have been modified to suit the needs of this tool.
+
 ### Contributions
 
 Contributions are welcome!
