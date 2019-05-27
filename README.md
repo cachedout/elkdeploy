@@ -1,6 +1,6 @@
 # esdeploy
 
-### ESdeploy is a tool to quickly deploy an Elastic Stack for testing and demonstration purposes
+### ESdeploy is a tool to quickly deploy an Elastic Stack for development, testing, and demonstration purposes
 
 ESdeploy is a collection of modified Ansible recipies when used along with Vagrant allow any user to locally create and tear down various components of the Elastic Stack locally, all using local virtual machines which provide complete isolation from one another and from your machine.
 
