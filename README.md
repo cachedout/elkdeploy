@@ -1,10 +1,10 @@
-# esdeploy
+# elkdeploy
 
-### ESdeploy is a tool to quickly deploy an Elastic Stack for development, testing, and demonstration purposes
+### ELKdeploy is a tool to quickly deploy an Elastic Stack for development, testing, and demonstration purposes
 
-ESdeploy is a collection of modified Ansible recipies when used along with Vagrant allow any user to locally create and tear down various components of the Elastic Stack locally, all using local virtual machines which provide complete isolation from one another and from your machine.
+ELKdeploy is a collection of modified Ansible recipies when used along with Vagrant allow any user to locally create and tear down various components of the Elastic Stack locally, all using local virtual machines which provide complete isolation from one another and from your machine.
 
-This means that you can easily use ESdeploy to create an environment for testing or for demonstration and even recreate that environment the same way as many times as you like!
+This means that you can easily use ELKdeploy to create an environment for testing or for demonstration and even recreate that environment the same way as many times as you like!
 
 This nice thing is that each part of the Elastic Stack is deployed into its own virtual machine, so you can muck about with one while leaving the rest of the stack pristine.
 
@@ -29,7 +29,7 @@ Use Vagrant directly to bring machines up and down. For example, to bring up an 
 
 `vagrant up es1.prod kb1.prod`
 
-After doing so, ESdeploy will bring up two machines, both with Ubuntu base images. You can access Kibana via your browser at http://localhost:5601. (Note that you should not have either an Elasticsearch or a Kibana instance running locally as of this version of ESdeploy. This will be rectified in later versions.)
+After doing so, ELKdeploy will bring up two machines, both with Ubuntu base images. You can access Kibana via your browser at http://localhost:5601. (Note that you should not have either an Elasticsearch or a Kibana instance running locally as of this version of ESdeploy. This will be rectified in later versions.)
 
 To access either the Elasticsearch or the Kibana hosts directly via SSH, use `vagrant ssh`. For example, to get dropped into a shell prompt on the Kibana machine, type:
 
